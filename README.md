@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Features
+## Features
 
 * **PDF Processing Tools:** Extract text, merge, split, or convert documents efficiently.
 * **Modern Web Interface:** Clean, user-friendly UI built for speed and ease of use.
@@ -12,7 +12,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend:** HTML5, CSS3, JavaScript
 * **Backend:** Python (Flask / FastAPI / Core scripts)
@@ -20,7 +20,7 @@
 
 ---
 
-## ⚙️ Installation & Local Setup
+## Installation & Local Setup
 
 To run this project locally on your machine, follow these steps:
 
