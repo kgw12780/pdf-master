@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Organize PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-sort"></i> Organize PDF</h2>
+    <p>Reorder pages in your PDF document.</p>
+    
+    <form action="{{ url_for('organize_pdf') }}" method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% include 'partials/upload_area.html' with context %}
+        
+        <div class="form-group">
+            <label for="page_order">Page Order (comma-separated):</label>
+            <input type="text" name="page_order" id="page_order" placeholder="e.g., 1,3,2" required>
+            <small>Specify the new order of pages (e.g., "1,3,2" to move page 3 before page 2)</small>
+        </div>
+        
+        <button type="submit" class="btn">
+            <i class="fas fa-sort"></i> Reorder Pages
+        </button>
+    </form>
+</section>
+{% endblock %}

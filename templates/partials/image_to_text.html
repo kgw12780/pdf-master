@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Image to Text (OCR){% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-image"></i> Image to Text Extraction (OCR)</h2>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% set accept_types = '.png,.jpg,.jpeg,.bmp,.gif,.tiff,.webp' %}
+        {% set file_input_name = 'image' %}
+        {% include 'partials/upload_area.html' %}
+        <button type="submit" class="btn">
+            <i class="fas fa-file-alt"></i> Extract Text
+        </button>
+    </form>
+
+    {% if extracted_text %}
+    <section class="ocr-result">
+        <h3>Extracted Text:</h3>
+        <pre>{{ extracted_text }}</pre>
+    </section>
+    {% endif %}
+</section>
+{% endblock %}

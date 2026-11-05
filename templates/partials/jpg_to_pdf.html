@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}JPG to PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-file-pdf"></i> JPG to PDF</h2>
+    <p>Convert one or more JPG images to a PDF document.</p>
+    
+    <form action="{{ url_for('jpg_to_pdf') }}" method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% set file_input_name = 'files' %}
+        {% set multiple = true %}
+        {% set accept_types = '.jpg,.jpeg,.png' %}
+        {% include 'partials/upload_area.html' %}
+        <button type="submit" class="btn">
+            <i class="fas fa-file-pdf"></i> Convert to PDF
+        </button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<style>
+  .hero {
+    background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+  }
+  .contact-card {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .contact-icon {
+    font-size: 3rem;
+    color: #ee0979;
+    margin-bottom: 1rem;
+  }
+  .contact-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .contact-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  .support-section, .feedback-section {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  }
+  .support-section h3, .feedback-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ee0979;
+  }
+  .support-section p, .feedback-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  .feedback-form {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .feedback-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ee0979;
+  }
+  .feedback-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .feedback-form label {
+    font-weight: 600;
+    color: #333;
+  }
+  .feedback-form input, .feedback-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  .feedback-form button {
+    background: #ee0979;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+  }
+  .feedback-form button:hover {
+    background: #d6006a;
+  }
+  .cta-section {
+    background: #ee0979;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-button {
+    background: #ff6a00;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .cta-button:hover {
+    background: #d65c00;
+  }
+</style>
+
+<div class="hero">
+  <h1>Contact Us</h1>
+  <p>We would love to hear from you! Whether you have questions, feedback, or need support, our team is here to assist you.</p>
+</div>
+
+<div class="contact-info">
+  <div class="contact-card">
+    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+    <div class="contact-title">Email</div>
+    <div class="contact-text">kaveengimhana@gmail.com</div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+    <div class="contact-title">Phone</div>
+    <div class="contact-text">+94 72 223 7060</div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <div class="contact-title">Address</div>
+    <div class="contact-text">294/A, Kakunahena, Porupitiya, Waralla</div>
+  </div>
+</div>
+
+<div class="support-section">
+  <h3>Customer Support</h3>
+  <p>Our support team is available Monday to Friday, 9 AM to 6 PM. We aim to respond to all inquiries within 24 hours.</p>
+</div>
+
+<div class="feedback-section">
+  <h3>Feedback</h3>
+  <p>Your feedback helps us improve. Please share your thoughts and suggestions through our contact form or email.</p>
+</div>
+
+<div class="feedback-form">
+  <h3>Send Us Your Feedback</h3>
+  <form method="post" action="{{ url_for('submit_feedback') }}">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required />
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email" required />
+    
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Your feedback" required></textarea>
+    
+    <button type="submit">Submit Feedback</button>
+  </form>
+</div>
+
+<div class="cta-section">
+  <h2>Stay Connected</h2>
+  <a href="{{ url_for('index') }}" class="cta-button">Back to Home</a>
+</div>
+
+{% endblock %}

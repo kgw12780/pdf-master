@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}PDF to Word Conversion{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-file-word"></i> PDF to Word Conversion</h2>
+    <p>Convert your PDF files to editable Word documents.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% include 'partials/upload_area.html' with context %}
+        <button type="submit" class="btn">
+            <i class="fas fa-file-word"></i> Convert to Word
+        </button>
+    </form>
+</section>
+{% endblock %}

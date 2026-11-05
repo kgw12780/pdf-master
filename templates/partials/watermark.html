@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Add Watermark to PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-stamp"></i> Add Watermark to PDF</h2>
+    <p>Add a text watermark to your PDF document.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% include 'partials/upload_area.html' %}
+        
+        <div class="form-group">
+            <label for="watermark_text">Watermark Text:</label>
+            <input type="text" name="watermark_text" id="watermark_text" required>
+        </div>
+        
+        <button type="submit" class="btn">
+            <i class="fas fa-stamp"></i> Add Watermark
+        </button>
+    </form>
+</section>
+{% endblock %}

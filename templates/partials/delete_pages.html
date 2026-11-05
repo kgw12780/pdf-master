@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Pages from PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-trash-alt"></i> Delete Pages from PDF</h2>
+    <p>Remove specific pages from your PDF document.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% include 'partials/upload_area.html' with context %}
+        
+        <div class="form-group">
+            <label for="pages_to_delete">Pages to delete (e.g., "1,3-5,7"):</label>
+            <input type="text" name="pages_to_delete" id="pages_to_delete" required>
+        </div>
+        
+        <button type="submit" class="btn">
+            <i class="fas fa-trash-alt"></i> Delete Pages
+        </button>
+    </form>
+</section>
+{% endblock %}

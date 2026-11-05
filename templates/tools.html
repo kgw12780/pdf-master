@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Tools{% endblock %}
+{% block content %}
+<style>
+  .hero {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .tool-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  .tool-icon {
+    font-size: 3rem;
+    color: #38ef7d;
+    margin-bottom: 1rem;
+  }
+  .tool-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .tool-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  .cta-section {
+    background: #38ef7d;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-button {
+    background: #11998e;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .cta-button:hover {
+    background: #0e7a6a;
+  }
+</style>
+
+<div class="hero">
+  <h1>Powerful PDF Tools at Your Fingertips</h1>
+  <p>Explore our suite of tools designed to simplify your PDF management tasks with efficiency and ease.</p>
+</div>
+
+<div class="tools-grid">
+  <div class="tool-card">
+    <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
+    <div class="tool-title">PDF Merger</div>
+    <div class="tool-description">Combine multiple PDF files into one seamless document.</div>
+  </div>
+  <div class="tool-card">
+    <div class="tool-icon"><i class="fas fa-compress"></i></div>
+    <div class="tool-title">PDF Compressor</div>
+    <div class="tool-description">Reduce the size of your PDF files for easier sharing and storage.</div>
+  </div>
+  <div class="tool-card">
+    <div class="tool-icon"><i class="fas fa-image"></i></div>
+    <div class="tool-title">Image to PDF Converter</div>
+    <div class="tool-description">Convert images like JPG and PNG into PDF format.</div>
+  </div>
+  <div class="tool-card">
+    <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+    <div class="tool-title">OCR Tool</div>
+    <div class="tool-description">Extract text from scanned documents and images with Optical Character Recognition.</div>
+  </div>
+  <div class="tool-card">
+    <div class="tool-icon"><i class="fas fa-file-word"></i></div>
+    <div class="tool-title">PDF to Text Converter</div>
+    <div class="tool-description">Convert PDF files into editable text documents.</div>
+  </div>
+  <div class="tool-card">
+    <div class="tool-icon"><i class="fas fa-lock"></i></div>
+    <div class="tool-title">PDF Security</div>
+    <div class="tool-description">Add passwords and encryption to protect your documents.</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Get Started with PDF MASTER Today</h2>
+  <a href="{{ url_for('index') }}" class="cta-button">Start Now</a>
+</div>
+
+{% endblock %}

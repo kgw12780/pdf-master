@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Compress PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-compress"></i> Compress PDF</h2>
+    <p>Reduce the file size of your PDF document.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% set file_input_name = "file" %}
+        {% set accept_types = ".pdf" %}
+        {% set multiple = false %}
+        {% include 'partials/upload_area.html' %}
+        <button type="submit" class="btn">
+            <i class="fas fa-compress"></i> Compress PDF
+        </button>
+    </form>
+</section>
+{% endblock %}

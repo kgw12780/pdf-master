@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Merge PDFs{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-object-group"></i> Merge PDF Files</h2>
+    <p>Combine multiple PDF files into one document in seconds.</p>
+    
+    <form action="{{ url_for('merge_pdfs') }}" method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% include 'partials/upload_area_merge.html' %}
+        <button type="submit" class="btn">
+            <i class="fas fa-object-group"></i> Merge PDFs
+        </button>
+    </form>
+</section>
+
+{% block scripts %}
+<script>
+    // Additional scripts if needed
+</script>
+{% endblock %}
+{% endblock %}

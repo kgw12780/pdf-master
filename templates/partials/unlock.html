@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Unlock PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-unlock"></i> Unlock PDF</h2>
+    <p>Remove password protection from your PDF.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% set file_input_name = "file" %}
+        {% set accept_types = ".pdf" %}
+        {% set multiple = false %}
+        {% include 'partials/upload_area.html' %}
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        
+        <button type="submit" class="btn">
+            <i class="fas fa-unlock"></i> Unlock PDF
+        </button>
+    </form>
+</section>
+{% endblock %}

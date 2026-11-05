@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>All Your PDF Needs in One Place</h2>
+        <p>Enjoy lightning-fast processing to merge, split, compress, and more, all in just a few clicks.</p>
+    </div>
+</section>
+
+<section class="tools-grid">
+    <div class="tool-card" onclick="location.href='{{ url_for('merge_pdfs') }}'">
+        <i class="fas fa-object-group"></i>
+        <h3>Merge PDF</h3>
+        <p>Combine multiple PDF files into one</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('pdf_to_word') }}'">
+        <i class="fas fa-file-word"></i>
+        <h3>PDF to Word</h3>
+        <p>Convert PDF files to editable Word documents</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('word_to_pdf') }}'">
+        <i class="fas fa-file-pdf"></i>
+        <h3>Word to PDF</h3>
+        <p>Convert Word documents to PDF files</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('split_pdf') }}'">
+        <i class="fas fa-cut"></i>
+        <h3>Split PDF</h3>
+        <p>Extract pages from a PDF file</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('compress_pdf') }}'">
+        <i class="fas fa-compress-alt"></i>
+        <h3>Compress PDF</h3>
+        <p>Reduce PDF file size while preserving quality</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('pdf_to_ppt') }}'">
+        <i class="fas fa-file-powerpoint"></i>
+        <h3>PDF to PowerPoint</h3>
+        <p>Convert PDF files to PowerPoint presentations</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('excel_to_pdf') }}'">
+        <i class="fas fa-file-excel"></i>
+        <h3>Excel to PDF</h3>
+        <p>Convert Excel files to PDF documents</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('pdf_to_jpg') }}'">
+        <i class="fas fa-file-image"></i>
+        <h3>PDF to JPG</h3>
+        <p>Convert PDF pages to JPG images</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('jpg_to_pdf') }}'">
+        <i class="fas fa-file-pdf"></i>
+        <h3>JPG to PDF</h3>
+        <p>Convert JPG images to PDF files</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('add_watermark') }}'">
+        <i class="fas fa-stamp"></i>
+        <h3>Add Watermark</h3>
+        <p>Add a watermark to your PDF files</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('rotate_pdf') }}'">
+        <i class="fas fa-redo"></i>
+        <h3>Rotate PDF</h3>
+        <p>Rotate PDF pages by 90, 180, or 270 degrees</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('protect_pdf') }}'">
+        <i class="fas fa-lock"></i>
+        <h3>Protect PDF</h3>
+        <p>Encrypt PDF with a password</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('unlock_pdf') }}'">
+        <i class="fas fa-unlock"></i>
+        <h3>Unlock PDF</h3>
+        <p>Remove password from PDF files</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('organize_pdf') }}'">
+        <i class="fas fa-sort"></i>
+        <h3>Organize PDF</h3>
+        <p>Reorder PDF pages</p>
+    </div>
+    
+    <div class="tool-card" onclick="location.href='{{ url_for('delete_pages') }}'">
+        <i class="fas fa-trash-alt"></i>
+        <h3>Delete Pages</h3>
+        <p>Remove pages from PDF files</p>
+    </div>
+
+    <div class="tool-card" onclick="location.href='{{ url_for('image_to_text') }}'">
+        <i class="fas fa-file-alt"></i>
+        <h3>Image to Text</h3>
+        <p>Extract text from images using OCR</p>
+    </div>
+    <div class="tool-card" onclick="location.href='{{ url_for('ocr_pdf') }}'">
+        <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius: 8px; background-color: #4a6cf7;">
+            <rect width="32" height="40" rx="8" fill="#4a6cf7"/>
+            <text x="16" y="14" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="12" text-anchor="middle" alignment-baseline="middle">OCR</text>
+            <rect x="8" y="21" width="16" height="2.8" rx="2" fill="white"/>
+            <rect x="8" y="26" width="16" height="2.8" rx="2" fill="white"/>
+            <rect x="8" y="31" width="16" height="2.8" rx="2" fill="white"/>
+        </svg>
+        <h3>OCR PDF</h3>
+        <p>Convert non-selectable PDF files into selectable and searchable PDF with high accuracy.</p>
+    </div>
+    <div class="tool-card" onclick="location.href='{{ url_for('summarize') }}'">
+        <i class="fas fa-brain"></i>
+        <h3>AI Document Summarization</h3>
+        <p>Generate concise summaries of academic documents using AI</p>
+    </div>
+</section>
+{% endblock %}

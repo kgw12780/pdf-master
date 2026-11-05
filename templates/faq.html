@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}FAQ / Help{% endblock %}
+{% block content %}
+<style>
+  .hero {
+    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .faq-section {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+  .faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .faq-question {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #185a9d;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-answer {
+    padding: 0 1.5rem 1rem 1.5rem;
+    font-size: 1rem;
+    color: #444;
+    display: none;
+  }
+  .faq-question:hover {
+    background: #f0f8ff;
+  }
+  .faq-question.active + .faq-answer {
+    display: block;
+  }
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  .faq-question.active .faq-icon {
+    transform: rotate(45deg);
+  }
+</style>
+
+<div class="hero">
+  <h1>Frequently Asked Questions</h1>
+  <p>Find answers to common questions about PDF MASTER and how to use our tools effectively.</p>
+</div>
+
+<div class="faq-section">
+  <div class="faq-item">
+    <div class="faq-question">What is PDF MASTER? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      PDF MASTER is a web-based application offering a suite of PDF tools including merging, compressing, converting, and OCR.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Is PDF MASTER free to use? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      Yes, PDF MASTER offers free access to all its core features without any hidden charges.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Do I need to create an account? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      No account is required. You can use all tools anonymously.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">How do I merge PDF files? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      Navigate to the Merge tool, upload your PDF files, arrange them in the desired order, and click "Merge".
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Can I compress PDFs without losing quality? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      Yes, our compression tool reduces file size while maintaining good visual quality.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">What image formats are supported for conversion? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      We support JPG, PNG, BMP, and TIFF formats for image to PDF conversion.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Are my files safe? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      Yes, all files are encrypted during transfer and deleted from our servers after processing.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Do you share my data with third parties? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      No, we respect your privacy and do not share your data.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">What if a tool is not working? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      Please try refreshing the page or clearing your browser cache. Contact us if the problem persists.
+    </div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Which browsers are supported? <span class="faq-icon">+</span></div>
+    <div class="faq-answer">
+      PDF MASTER works best on modern browsers like Chrome, Firefox, Edge, and Safari.
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+      });
+    });
+  });
+</script>
+
+{% endblock %}

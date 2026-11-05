@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="tool-container">
+        <h2>Word to PDF Conversion</h2>
+        <p>Convert your Word documents to PDF files.</p>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Select Word file to convert:</label>
+                <input type="file" name="file" id="file" accept=".docx,.doc" required>
+            </div>
+            
+            <button type="submit" class="btn">Convert to PDF</button>
+        </form>
+    </div>
+{% endblock %}

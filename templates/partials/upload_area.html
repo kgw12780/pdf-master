@@ -1,0 +1,92 @@
+{% set file_input_name = file_input_name if file_input_name is defined else 'file' %}
+{% set accept_types = accept_types if accept_types is defined else '.pdf,.docx,.doc' %}
+{% set multiple = multiple if multiple is defined else false %}
+{% set unique_id = 'file-input-' + (range(10000)|random|string) %}
+<div class="upload-area">
+    <label class="upload-label btn-choose-files" for="{{ unique_id }}">
+        CHOOSE FILES
+        <span class="upload-text">or drop files here</span>
+    </label>
+    <div class="selected-files" id="{{ unique_id }}-selected-files" aria-live="polite" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--white);"></div>
+    <input id="{{ unique_id }}" type="file" name="{{ file_input_name }}" {% if multiple %}multiple{% endif %} accept="{{ accept_types }}" style="position:absolute; width:1px; height:1px; opacity:0; left:-9999px;" required>
+</div>
+
+<script>
+    document.querySelectorAll('.upload-area').forEach(uploadArea => {
+        const fileInput = uploadArea.querySelector('input[type="file"]');
+        const selectedFilesDiv = uploadArea.querySelector('.selected-files');
+
+        function updateSelectedFiles() {
+            const files = fileInput.files;
+            if (files.length === 0) {
+                selectedFilesDiv.textContent = '';
+            } else if (files.length === 1) {
+                selectedFilesDiv.textContent = `Selected file: ${files[0].name}`;
+            } else {
+                selectedFilesDiv.textContent = `Selected files: ${files.length}`;
+            }
+        }
+
+        fileInput.addEventListener('change', updateSelectedFiles);
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                updateSelectedFiles();
+            }
+        });
+    });
+</script>
+
+<style>
+.upload-area {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    color: var(--white);
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.upload-area.dragover {
+    background-color: #3a5bef;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--dark-color);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+    background-color: #222;
+}
+
+.upload-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+</style>

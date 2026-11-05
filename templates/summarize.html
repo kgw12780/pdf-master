@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Document Summarization{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-brain"></i> Document Summarization</h2>
+    <p>Upload a document or paste text to generate a concise summary.</p>
+    
+        <form method="POST" enctype="multipart/form-data" class="pdf-form" style="margin-bottom: 2rem;">
+            {% include 'partials/upload_area.html' %}
+            
+            <button type="submit" class="btn">
+                <i class="fas fa-brain"></i> Generate Summary
+            </button>
+        </form>
+
+    {% if summary %}
+    <section>
+        <h2>Summary</h2>
+        <div style="white-space: pre-wrap; background-color: #f0f0f0; padding: 1rem; border-radius: 5px;">
+            {{ summary }}
+        </div>
+    </section>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+</section>
+{% endblock %}

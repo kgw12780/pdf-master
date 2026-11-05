@@ -1,0 +1,32 @@
+Flask==3.0.2
+flask-compress==1.14
+Werkzeug==3.0.3
+PyPDF2==3.0.1
+pdf2docx==0.5.8
+python-docx==0.8.11
+pdf2image==1.17.0
+Pillow==11.2.1
+openpyxl==3.1.2
+python-pptx==0.6.23
+flask-wtf==1.2.1
+img2pdf==0.6.1
+pikepdf==9.7.0
+PyMuPDF==1.25.5
+pywin32==310
+XlsxWriter==3.2.3
+opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
+numpy==2.2.5
+requests==2.32.3
+reportlab==4.4.0
+pytesseract==0.3.13
+docx2pdf==0.1.8
+openai==1.78.0
+python-dotenv==1.0.0
+transformers==4.52.2
+torch==2.7.0
+
+# System Dependencies (install separately):
+# Tesseract OCR
+# Ghostscript
+# Poppler

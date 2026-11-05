@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="result-container">
+        <h2>Your file is ready!</h2>
+        <p>Click the button below to download your processed file.</p>
+        <a href="{{ url_for('download', filename=filename) }}" class="btn download-btn">Download {{ filename }}</a>
+        <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+    </div>
+{% endblock %}

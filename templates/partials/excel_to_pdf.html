@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Excel to PDF{% endblock %}
+
+{% block content %}
+<section class="tool-section">
+    <h2><i class="fas fa-file-excel"></i> Excel to PDF</h2>
+    <p>Convert your Excel file to a PDF document.</p>
+    
+    <form method="POST" enctype="multipart/form-data" class="pdf-form">
+        {% include 'partials/upload_area.html' with context update({'accept_types': '.xls,.xlsx'}) %}
+        <button type="submit" class="btn">
+            <i class="fas fa-file-excel"></i> Convert to PDF
+        </button>
+    </form>
+</section>
+{% endblock %}

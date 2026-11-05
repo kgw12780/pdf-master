@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Legal & Privacy{% endblock %}
+{% block content %}
+<style>
+  .hero {
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .legal-section {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .legal-section h2 {
+    color: #222;
+    margin-bottom: 1rem;
+  }
+  .legal-section h3 {
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .legal-section p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  .cta-section {
+    background: #000000;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-button {
+    background: #434343;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .cta-button:hover {
+    background: #222222;
+  }
+</style>
+
+<div class="hero">
+  <h1>Legal & Privacy</h1>
+  <p>Your trust is important to us. Learn about our commitment to protecting your rights and data.</p>
+</div>
+
+<div class="legal-section">
+  <h2>Terms and Conditions</h2>
+  <p>By using PDF MASTER, you agree to comply with our terms and conditions, which outline the acceptable use of our services and your responsibilities as a user. These terms are designed to ensure a safe and fair environment for all users. We encourage you to read them carefully and contact us if you have any questions or concerns.</p>
+  <p>Our services are provided "as is" without warranties of any kind, either express or implied. We reserve the right to modify or discontinue any service without prior notice. Users are responsible for ensuring that their use of the services complies with all applicable laws and regulations.</p>
+
+  <h3>Privacy Policy</h3>
+  <p>We respect your privacy and are dedicated to protecting your personal information. Our privacy policy explains what data we collect, how we use it, and your rights regarding your information. We collect only the data necessary to provide and improve our services, and we never sell or share your personal information with third parties without your consent.</p>
+  <p>We implement industry-standard security measures to safeguard your data from unauthorized access, alteration, or disclosure. You have the right to access, correct, or delete your personal information at any time by contacting us.</p>
+
+  <h3>Data Collection</h3>
+  <p>We collect minimal data necessary to provide our services, including uploaded files, usage statistics, and technical information such as IP addresses and browser types. This data helps us analyze trends, administer the site, and improve user experience.</p>
+  <p>All data is handled securely and confidentially, and we retain it only for as long as necessary to fulfill the purposes outlined in this policy or as required by law.</p>
+
+  <h3>Cookies</h3>
+  <p>Our website uses cookies to enhance user experience, remember preferences, and provide personalized content. Cookies are small text files stored on your device that help us understand how you interact with our site.</p>
+  <p>You can manage your cookie preferences through your browser settings, including blocking or deleting cookies. Please note that disabling cookies may affect the functionality of certain features on our site.</p>
+
+  <h3>Third-Party Services</h3>
+  <p>We may use trusted third-party services to support our platform, such as analytics providers, payment processors, and cloud storage services. These providers are carefully selected and are required to adhere to strict privacy and security standards.</p>
+  <p>We do not share your personal information with third parties for their marketing purposes without your explicit consent.</p>
+
+  <h3>Contact for Legal Matters</h3>
+  <p>If you have any questions or concerns about our legal policies, please contact us through the contact page. We are committed to addressing your inquiries promptly and transparently.</p>
+</div>
+
+<div class="cta-section">
+  <h2>Have Questions? Get in Touch</h2>
+  <a href="{{ url_for('contact') }}" class="cta-button">Contact Us</a>
+</div>
+
+{% endblock %}

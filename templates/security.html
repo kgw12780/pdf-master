@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}Security{% endblock %}
+{% block content %}
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .security-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .security-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  .security-icon {
+    font-size: 3rem;
+    color: #2a5298;
+    margin-bottom: 1rem;
+  }
+  .security-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .security-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  .cta-section {
+    background: #2a5298;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .cta-button {
+    background: #1e3c72;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .cta-button:hover {
+    background: #16325c;
+  }
+</style>
+
+<div class="hero">
+  <h1>Security You Can Trust</h1>
+  <p>At PDF MASTER, your privacy and data protection are our top priorities. Explore our robust security features designed to keep your documents safe.</p>
+</div>
+
+  <div class="security-card">
+    <div class="security-icon"><i class="fas fa-user-shield"></i></div>
+    <div class="security-title">Access Control</div>
+    <div class="security-description">Strict access controls ensure only authorized personnel can access your data.</div>
+  </div>
+  <div class="security-card">
+    <div class="security-icon"><i class="fas fa-file-upload"></i></div>
+    <div class="security-title">File Type Validation</div>
+    <div class="security-description">Only PDF files are accepted. MIME type checks are used to confirm file authenticity and prevent harmful uploads.</div>
+  </div>
+  <div class="security-card">
+    <div class="security-icon"><i class="fas fa-arrows-alt-v"></i></div>
+    <div class="security-title">File Size Limit</div>
+    <div class="security-description">Maximum file size is limited to 16 MB to maintain performance and protect against denial-of-service attacks.</div>
+  </div>
+  <div class="security-card">
+    <div class="security-icon"><i class="fas fa-trash-alt"></i></div>
+    <div class="security-title">Temporary Storage</div>
+    <div class="security-description">Files are stored temporarily and deleted automatically shortly after processing and download to ensure secure and temporary file handling.</div>
+  </div>
+  <div class="security-card">
+    <div class="security-icon"><i class="fas fa-user-secret"></i></div>
+    <div class="security-title">User Privacy</div>
+    <div class="security-description">We do not share your data with third parties and comply with data protection laws.</div>
+  </div>
+  <div class="security-card">
+    <div class="security-icon"><i class="fas fa-sync-alt"></i></div>
+    <div class="security-title">Regular Audits</div>
+    <div class="security-description">Our systems undergo regular security audits to maintain the highest standards.</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Experience Secure Document Management</h2>
+  <a href="{{ url_for('index') }}" class="cta-button">Start Using PDF MASTER</a>
+</div>
+
+{% endblock %}

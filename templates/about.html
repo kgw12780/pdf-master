@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% block title %}About Me{% endblock %}
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+  .hero {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 40px rgba(38, 57, 77, 0.4);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+    animation: pulse 6s ease-in-out infinite;
+    z-index: 0;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.1) translate(10%, 10%); }
+  }
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+  }
+  .hero p {
+    font-size: 1.6rem;
+    max-width: 720px;
+    margin: 0 auto;
+    font-style: italic;
+    font-weight: 500;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 1;
+  }
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  .about-text {
+    flex: 1 1 650px;
+    background: white;
+    border-radius: 20px;
+    padding: 3.5rem 3.5rem 4.5rem 3.5rem;
+    box-shadow: 0 15px 50px rgba(38, 57, 77, 0.12);
+    color: #222;
+    line-height: 1.85;
+    font-size: 1.2rem;
+    border: 2px solid #6a11cb;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .about-text:hover {
+    box-shadow: 0 20px 60px rgba(106, 17, 203, 0.3);
+    border-color: #2575fc;
+  }
+  .about-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
+    color: #6a11cb;
+    font-weight: 700;
+    border-bottom: 4px solid #2575fc;
+    padding-bottom: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .about-text p {
+    margin-bottom: 1.5rem;
+  }
+  .mission-vision {
+    background: #f5f8ff;
+    border-radius: 20px;
+    padding: 3.5rem 3.5rem;
+    box-shadow: 0 10px 40px rgba(38, 57, 77, 0.07);
+    margin-bottom: 4rem;
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    border-left: 6px solid #6a11cb;
+  }
+  .mission-vision h3 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: #2575fc;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .mission-vision p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+  .cta-section {
+    background: #2575fc;
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(38, 57, 77, 0.25);
+    font-family: 'Poppins', sans-serif;
+  }
+  .cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  .cta-button {
+    background: #6a11cb;
+    color: white;
+    padding: 1.2rem 3.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 800;
+    box-shadow: 0 8px 30px rgba(106, 17, 203, 0.6);
+  }
+  .cta-button:hover {
+    background: #4b0fa3;
+    box-shadow: 0 12px 40px rgba(75, 15, 163, 0.8);
+  }
+</style>
+
+<div class="hero">
+  <h1>About Me</h1>
+  <p>Discover my journey, mission, and vision as I strive to provide the best PDF tools tailored just for you.</p>
+</div>
+
+<div class="about-section">
+  <div class="about-text">
+    <h2>My Story</h2>
+    <p>PDF MASTER was founded with a personal mission to simplify document management for everyone. I am passionate about creating tools that are both powerful and easy to use.</p>
+    <p>I believe in innovation, security, and user-centric design, ensuring that this platform meets the needs of individuals and businesses alike.</p>
+  </div>
+</div>
+
+<div class="mission-vision">
+  <h3>My Mission</h3>
+  <p>To empower users worldwide with accessible, reliable, and secure PDF tools that enhance productivity and collaboration.</p>
+  <h3>My Vision</h3>
+  <p>To be the leading platform for PDF solutions, recognized for innovation, quality, and exceptional user experience.</p>
+</div>
+
+<div class="cta-section">
+  <h2>Join Me on This Journey</h2>
+  <a href="{{ url_for('contact') }}" class="cta-button">Contact Me</a>
+</div>
+
+{% endblock %}
